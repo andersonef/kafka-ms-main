@@ -30,3 +30,26 @@ $ chmod +x kafka-ms-broker/scripts/down.sh
 $ chmod +x kafka-ms-kafka/scripts/up.sh
 $ ./scripts/up.sh
 ```
+
+# Docker Services
+
+ - kafka-ms-kafka: kafka service. Available port: 9092
+ - kafka-ms-broker: Broker microservice. Available at localhost:8082.
+    - Endpoints: 
+        - GET /request 
+        - POST /request
+- kafka-ms-broker-db: Postgres database. 
+    - Database: Broker
+    - User: test
+    - Password: test
+    - Port: 5432
+- adminer: Database visualizer. Available at: http://localhost:8080
+
+# Creating a request
+
+You just need to make a POST request to: http://localhost:8082/request. It will create a request
+with a random token, store it into database and send it to topic-a. The created token will be sent to the client as JSON.
+
+# Reading a request
+
+To read a request, you just need to make a GET request to: http://localhost:8082/request?token="your token here"
