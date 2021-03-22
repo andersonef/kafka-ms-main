@@ -1,0 +1,6 @@
+[submodule "kafka-ms-kafka"]
+	path = kafka-ms-kafka
+	url = git@github.com:andersonef/kafka-ms-kafka.git
+[submodule "kafka-ms-broker"]
+	path = kafka-ms-broker
+	url = git@github.com:andersonef/kafka-ms-broker.git
